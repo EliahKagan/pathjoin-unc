@@ -15,7 +15,9 @@ fn main() {
         for right in paths {
             let p = Path::new(left);
             let q = Path::new(right);
-            println!("{:?} + {:?} = {:?}", p, q, p.join(q));
+            let r = p.join(q);
+            let joined = r.to_str().expect("valid Unicode");
+            println!("{left:4}  +  {right:4}  =  {joined}");
         }
     }
 }
